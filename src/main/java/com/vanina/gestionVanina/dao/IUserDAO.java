@@ -1,5 +1,11 @@
 package com.vanina.gestionVanina.dao;
 
-public interface IUserDAO {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+import com.vanina.gestionVanina.entities.User;
+
+@RepositoryRestResource
+public interface IUserDAO extends JpaRepository<User, Long>{
 
 }
