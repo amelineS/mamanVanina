@@ -32,6 +32,7 @@ public class Client implements Serializable {
 	
 	@OneToMany
 	private List<OrdreDeCommande> listeCommande;
+	
 	public Client(String prenomClient, Date dateNaissance, String adresse, String nomSociete, String numTel, String fax,
 			String mail, List<OrdreDeCommande> listeCommande) {
 		super();
