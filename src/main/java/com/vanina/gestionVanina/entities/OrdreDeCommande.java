@@ -28,6 +28,12 @@ public class OrdreDeCommande implements Serializable {
 	private String receptionneur;	
 	private int quantiteProduit;
 	
-	private Produit produit;
+
+	private String fabricant;
+	private String taille;
+	private String couleur;
+	private String modele;
+	private float prix;
+
 	
 }
