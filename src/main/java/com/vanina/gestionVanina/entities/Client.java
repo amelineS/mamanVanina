@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,12 +18,14 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Client implements Serializable {
 	
 	@Id @GeneratedValue
 	private Long idClient; 
 	private String prenomClient;
+	private String nomClient;
 	private Date dateNaissance;
 	private String adresse;
 	private String nomSociete;
@@ -32,19 +35,8 @@ public class Client implements Serializable {
 	
 	@OneToMany
 	private List<OrdreDeCommande> listeCommande;
-	
-	public Client(String prenomClient, Date dateNaissance, String adresse, String nomSociete, String numTel, String fax,
-			String mail, List<OrdreDeCommande> listeCommande) {
-		super();
-		this.prenomClient = prenomClient;
-		this.dateNaissance = dateNaissance;
-		this.adresse = adresse;
-		this.nomSociete = nomSociete;
-		this.numTel = numTel;
-		this.fax = fax;
-		this.mail = mail;
-		this.listeCommande = listeCommande;
-	}
+
+
 	
 	
 }
