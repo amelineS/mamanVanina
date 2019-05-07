@@ -1,10 +1,12 @@
 package com.vanina.gestionVanina.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,14 +28,15 @@ public class OrdreDeCommande implements Serializable {
 	private String faconnier;
 	private String societe;
 	private String receptionneur;	
-	private int quantiteProduit;
+	private String modele;
+	private String fabricant;
+	private String date;
+	
+	@OneToMany
+	private List<Produit> ListProduits;
+
 	
 
-	private String fabricant;
-	private String taille;
-	private String couleur;
-	private String modele;
-	private float prix;
 
 	
 }
