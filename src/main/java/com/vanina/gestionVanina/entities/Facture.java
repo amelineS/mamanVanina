@@ -41,7 +41,6 @@ public class Facture implements Serializable {
 	
 	
 	@OneToOne
-	@JoinColumn(name="quantiteProduit")
 	private OrdreDeCommande ordredecommande;
 
 	public Facture(int numTVA, Date dateLivraison, String description, float prixUnitaireHT, float tva,

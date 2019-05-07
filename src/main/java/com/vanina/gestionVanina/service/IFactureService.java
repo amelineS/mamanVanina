@@ -2,9 +2,10 @@ package com.vanina.gestionVanina.service;
 
 import javax.persistence.Id;
 
+import com.vanina.gestionVanina.dao.IFactureDAO;
 import com.vanina.gestionVanina.entities.Facture;
 
-public interface IFactureService {
+public interface IFactureService extends IFactureDAO{
 	
 //	public float soldeDu(Facture f);
 	public float totalHTRemise(Facture f);
