@@ -1,11 +1,14 @@
 package com.vanina.gestionVanina.service;
 
-import javax.persistence.Id;
 
-import com.vanina.gestionVanina.dao.IFactureDAO;
+
+import java.util.List;
+
+
 import com.vanina.gestionVanina.entities.Facture;
 
-public interface IFactureService extends IFactureDAO{
+
+public interface IFactureService {
 	
 //	public float soldeDu(Facture f);
 	public float totalHTRemise(Facture f);
@@ -15,4 +18,9 @@ public interface IFactureService extends IFactureDAO{
 //	public float accomptes(Facture f);
 	public float netAPayer(Facture f);
 
+	Facture save (Facture f);
+	List <Facture> findAll();
+	Facture update (Facture f);
+	void delete (Long id);
+	Facture findById (Long id);
 }
