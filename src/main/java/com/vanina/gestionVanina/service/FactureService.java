@@ -70,143 +70,32 @@ public class FactureService implements IFactureService {
 		return dao.findAll();
 	}
 
+
 	@Override
-	public List<Facture> findAll(Sort sort) {
+	public Facture save(Facture f) {
 		// TODO Auto-generated method stub
-		return dao.findAll(sort);
+		return dao.save(f);
 	}
 
 	@Override
-	public List<Facture> findAllById(Iterable<Long> ids) {
+	public Facture update(Facture f) {
 		// TODO Auto-generated method stub
-		return dao.findAllById(ids);
+		return dao.save(f);
 	}
 
 	@Override
-	public <S extends Facture> List<S> saveAll(Iterable<S> entities) {
-		// TODO Auto-generated method stub
-		return dao.saveAll(entities);
-	}
-
-	@Override
-	public void flush() {
-		// TODO Auto-generated method stub
-		dao.flush();
-	}
-
-	@Override
-	public <S extends Facture> S saveAndFlush(S entity) {
-		// TODO Auto-generated method stub
-		return dao.saveAndFlush(entity);
-	}
-
-	@Override
-	public void deleteInBatch(Iterable<Facture> entities) {
-		// TODO Auto-generated method stub
-		dao.deleteInBatch(entities);
-	}
-
-	@Override
-	public void deleteAllInBatch() {
-		// TODO Auto-generated method stub
-		dao.deleteAllInBatch();
-	}
-
-	@Override
-	public Facture getOne(Long id) {
-		// TODO Auto-generated method stub
-		return dao.getOne(id);
-	}
-
-	@Override
-	public <S extends Facture> List<S> findAll(Example<S> example) {
-		// TODO Auto-generated method stub
-		return dao.findAll(example);
-	}
-
-	@Override
-	public <S extends Facture> List<S> findAll(Example<S> example, Sort sort) {
-		// TODO Auto-generated method stub
-		return dao.findAll(example, sort);
-	}
-
-	@Override
-	public Page<Facture> findAll(Pageable pageable) {
-		// TODO Auto-generated method stub
-		return dao.findAll(pageable);
-	}
-
-	@Override
-	public <S extends Facture> S save(S entity) {
-		// TODO Auto-generated method stub
-		return dao.save(entity);
-	}
-
-	@Override
-	public Optional<Facture> findById(Long id) {
-		// TODO Auto-generated method stub
-		return dao.findById(id);
-	}
-
-	@Override
-	public boolean existsById(Long id) {
-		// TODO Auto-generated method stub
-		return dao.existsById(id);
-	}
-
-	@Override
-	public long count() {
-		// TODO Auto-generated method stub
-		return dao.count();
-	}
-
-	@Override
-	public void deleteById(Long id) {
+	public void delete(Long id) {
 		// TODO Auto-generated method stub
 		dao.deleteById(id);
 	}
 
 	@Override
-	public void delete(Facture entity) {
+	public Facture findById(Long id) {
 		// TODO Auto-generated method stub
-		dao.delete(entity);
+		return dao.getOne(id);
 	}
 
-	@Override
-	public void deleteAll(Iterable<? extends Facture> entities) {
-		// TODO Auto-generated method stub
-		dao.deleteAll(entities);
-	}
 
-	@Override
-	public void deleteAll() {
-		// TODO Auto-generated method stub
-		dao.deleteAll();
-	}
-
-	@Override
-	public <S extends Facture> Optional<S> findOne(Example<S> example) {
-		// TODO Auto-generated method stub
-		return dao.findOne(example);
-	}
-
-	@Override
-	public <S extends Facture> Page<S> findAll(Example<S> example, Pageable pageable) {
-		// TODO Auto-generated method stub
-		return dao.findAll(example, pageable);
-	}
-
-	@Override
-	public <S extends Facture> long count(Example<S> example) {
-		// TODO Auto-generated method stub
-		return dao.count(example);
-	}
-
-	@Override
-	public <S extends Facture> boolean exists(Example<S> example) {
-		// TODO Auto-generated method stub
-		return dao.exists(example);
-	}
 	
 	
 	
