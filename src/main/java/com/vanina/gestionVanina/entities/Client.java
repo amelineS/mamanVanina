@@ -28,6 +28,8 @@ public class Client implements Serializable {
 	private String nomClient;
 	private Date dateNaissance;
 	private String adresse;
+	private String ville;
+	private String zipcode;
 	private String nomSociete;
 	private String numTel;
 	private String fax;
