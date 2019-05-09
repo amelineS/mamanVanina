@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.vanina.gestionVanina.entities.OrdreDeCommande;
+import com.vanina.gestionVanina.entities.Produit;
 import com.vanina.gestionVanina.service.IOrdreService;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @CrossOrigin
 @RestController
 public class OrdreController {
@@ -29,7 +32,7 @@ public class OrdreController {
 		return ordreService.save(ordre);
 	}
 	
-	@GetMapping("/ordre")
+	@GetMapping("/ordres")
 	public List <OrdreDeCommande> findAll() {
 		
 		return ordreService.findAll();
@@ -51,5 +54,11 @@ public class OrdreController {
 	public OrdreDeCommande findById (@PathVariable Long id) {
 		
 		return ordreService.findById(id);
+	}
+	
+	@PostMapping("/ordre/produitCommande")
+	public void ajoutProduit(Produit p, Long id) {
+		findById(id).getListProduits().add(p);
+		save(findById(id));
 	}
 }

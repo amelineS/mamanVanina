@@ -5,13 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vanina.gestionVanina.dao.IOrdreDeCommandeDAO;
 import com.vanina.gestionVanina.entities.OrdreDeCommande;
+import com.vanina.gestionVanina.entities.Produit;
 
 @Service
 public class OrdreService implements IOrdreService {
 
 	@Autowired
-	IOrdreService ordredao;
+	IOrdreDeCommandeDAO ordredao;
 	
 	
 	
@@ -36,13 +38,20 @@ public class OrdreService implements IOrdreService {
 	@Override
 	public void delete(Long id) {
 		
-		ordredao.delete(id);
+		ordredao.deleteById(id);
 	}
 
 	@Override
 	public OrdreDeCommande findById(Long id) {
 		
-		return ordredao.findById(id);
+		return ordredao.getOne(id);
+	}
+
+	@Override
+	public void ajoutProduit(Produit p, Long id) {
+		findById(id).getListProduits().add(p);
+		save(findById(id));
+		
 	}
 
 }

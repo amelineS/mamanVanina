@@ -27,8 +27,14 @@ public class GestionVaninaApplication {
 //		cdao.deleteById(2L);;
 //		
 		System.out.println(pdao.findAll());
-		
-		
+//		
+//		OrdreDeCommande o = cdao.getOne(12L);
+//		Produit p = pdao.getOne(1L);
+//		
+//		o.getListProduits().add(p);
+//		
+//		cdao.save(o);
+//		
 //		
 	}
 
