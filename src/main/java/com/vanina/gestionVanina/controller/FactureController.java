@@ -56,11 +56,7 @@ public class FactureController {
 		return factureService.totalTTC(f);
 	}
 
-//	@GetMapping("/facture/accomptes")
-//	public float accomptes(@RequestBody Facture f) {
-//		// TODO Auto-generated method stub
-//		return factureService.accomptes(f);
-//	}
+
 
 	@GetMapping("/netapayer")
 	public float netAPayer(@RequestBody Facture f) {
@@ -75,7 +71,7 @@ public class FactureController {
 		return factureService.save(facture);
 	}
 	
-	@GetMapping("/facture")
+	@GetMapping("/factures")
 	public List <Facture> findAll() {
 		
 		return factureService.findAll();

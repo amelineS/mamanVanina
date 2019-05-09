@@ -15,7 +15,7 @@ public interface IFactureService {
 	public float totalTVA(Facture f);
 	public float totalHTnet(Facture f);
 	public float totalTTC(Facture f);
-//	public float accomptes(Facture f);
+
 	public float netAPayer(Facture f);
 
 	Facture save (Facture f);

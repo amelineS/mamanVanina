@@ -11,11 +11,13 @@ import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class Facture implements Serializable {
@@ -29,34 +31,26 @@ public class Facture implements Serializable {
 	@Id @GeneratedValue
 	private Long numCommande;
 //	private int codeClient;
-	private enum modeReglement{Chèque, Carte, Espèces};
+	private String modeReglement;
 	private int numTVA;
 	private Date dateLivraison;
 //	private int codeProduit;
-	private String description;
-	private int quantite;
-	private float prixUnitaireHT;
+//	private String description;
+//	private int quantite;
+//	private float prixUnitaireHT;
 	private float tva;
 	private Date dateEcheance;
 	private float remise;
-	private float accomptes;
+	private float acomptes;
+	private Date date;
+	private float escompte;
+	private float montantEcheance;
 	
 	
 	@OneToOne
 	private OrdreDeCommande ordredecommande;
 
-	public Facture(int numTVA, Date dateLivraison, String description, float prixUnitaireHT, float tva,
-			Date dateEcheance, float remise, float accomptes) {
-		super();
-		this.numTVA = numTVA;
-		this.dateLivraison = dateLivraison;
-		this.description = description;
-		this.prixUnitaireHT = prixUnitaireHT;
-		this.tva = tva;
-		this.dateEcheance = dateEcheance;
-		this.remise = remise;
-		this.accomptes = accomptes;
-	}
+
 	
 	
 	
