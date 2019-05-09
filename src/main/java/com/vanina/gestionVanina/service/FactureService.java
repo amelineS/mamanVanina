@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.vanina.gestionVanina.dao.IFactureDAO;
 import com.vanina.gestionVanina.entities.Facture;
+import com.vanina.gestionVanina.entities.Produit;
 
 @Service
 public class FactureService implements IFactureService {
@@ -43,12 +44,12 @@ public class FactureService implements IFactureService {
 	@Override
 	public float totalHTnet(Facture f) {
 
-//		float total=0f;
-//		for(Produit p : f.getOrdredecommande().getListProduits()) {
-//			total+=p.getPrix()*p.getQuantiteProduit();
-//		}
-//		return total;
-		return f.getPrixUnitaireHT()*f.getQuantite();
+		float total=0f;
+		for(Produit p : f.getOrdredecommande().getListProduits()) {
+			total+=p.getPrix()*p.getQuantiteProduit();
+		}
+		return total;
+	//	return f.getPrixUnitaireHT()*f.getQuantite();
 	}
 
 	@Override
@@ -61,7 +62,7 @@ public class FactureService implements IFactureService {
 	@Override
 	public float netAPayer(Facture f) {
 		// TODO Auto-generated method stub
-		return totalTTC(f)-f.getAccomptes();
+		return totalTTC(f)-f.getAcomptes();
 	}
 
 	@Override
