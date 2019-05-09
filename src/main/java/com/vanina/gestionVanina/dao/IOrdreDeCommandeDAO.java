@@ -5,7 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.vanina.gestionVanina.entities.OrdreDeCommande;
 
-@RepositoryRestResource 
+@RepositoryRestResource
 public interface IOrdreDeCommandeDAO extends JpaRepository <OrdreDeCommande, Long> {
 
 }
