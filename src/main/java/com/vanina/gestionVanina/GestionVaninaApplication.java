@@ -27,7 +27,7 @@ public class GestionVaninaApplication {
 //		cdao.deleteById(2L);;
 //		
 		IFactureDAO pdao = ctx.getBean(com.vanina.gestionVanina.dao.IFactureDAO.class);
-		pdao.deleteById(41L);
+//	pdao.deleteById(41L);
 		System.out.println(pdao.findAll());
 //		
 //		OrdreDeCommande o = cdao.getOne(12L);
